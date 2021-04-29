@@ -1,0 +1,35 @@
+.entry_content {
+    .wpforms-container {
+        max-width: 48rem;
+
+        .wpforms-form {
+
+            button[type=submit] {
+                background-color: $primaryAccentColor;
+                color: black;
+                border: none;
+
+                &:hover, &:focus {
+                    outline: none;
+                    border: none;
+                    background-color: lighten($primaryAccentColor, 15%);
+                }
+
+                &:focus {
+                    outline: 2px dotted $primaryAccentColor;
+                }
+            }
+        }
+    }
+
+    div.wpforms-container-full .wpforms-form label.wpforms-error {
+        background-color: white;
+        border: 1px solid #990000;
+    }
+
+    .wpforms-confirmation-container-full, div[submit-success]>.wpforms-confirmation-container-full:not(.wpforms-redirection-message) {
+        background: $primaryAccentColor;
+        color: black;
+        border: none;
+    }
+}

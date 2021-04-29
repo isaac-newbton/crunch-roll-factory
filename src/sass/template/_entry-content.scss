@@ -1,0 +1,58 @@
+.entry_content{
+    padding-bottom: 4rem;
+
+    p, ul, ol, .wpforms-container{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2rem;
+    }
+
+    hr{
+        max-width: $maxContentWidth;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.standard_width_content {
+    max-width: $maxContentWidth;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.side_padding {
+    padding-left: $sidePadding;
+    padding-right: $sidePadding;
+}
+
+.half_copy {
+
+    .content_container {
+        padding-top: 4rem;
+        padding-left: $sidePadding;
+        padding-right: $sidePadding;
+    }
+
+    .image_container img {
+        width: 100%;
+        height: 100%;
+        font-size: 0;
+        display: block;
+        object-fit: cover;
+    }
+
+    @media(min-width: $breakpointSm){
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        > * {
+            flex: 0 0 50%;
+        }
+
+        .content_container {
+            padding-right: 4rem;
+            padding-top: 8rem;
+        }
+    }
+}

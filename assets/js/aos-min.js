@@ -1,0 +1,1 @@
+if(AOS){let t=document.querySelectorAll(".gb-headline-text, .entry_content > p");if(0<t.length)for(let e of t)e.setAttribute("data-aos-duration","1200"),e.setAttribute("data-aos","fade-up");AOS.init({once:!1})}
