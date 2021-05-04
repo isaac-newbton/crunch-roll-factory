@@ -78,5 +78,9 @@ function aca_register_scripts(){
 }
 add_action('wp_enqueue_scripts', 'aca_register_scripts');
 
+function aca_theme_image_directory_uri(){
+    return get_template_directory_uri() . '/assets/img';
+}
+
 require_once get_template_directory() . '/inc/custom-post-types.php';
 require_once get_template_directory() . '/inc/admin.php';

@@ -1,8 +1,9 @@
 #site_top_wrapper{
-    background: black;
+    background: $primaryAccentColor;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.55);
 }
 
 #site_top{
@@ -14,7 +15,7 @@
     display:flex;
     flex-direction:column;
     flex-wrap:nowrap;
-    height: 100px;
+    height: 70px;
 
     @media(min-width:$breakpointNav){
         flex-direction:row;
@@ -27,11 +28,11 @@
     flex: 0 1 auto;
     display:flex;
     align-items:center;
-    padding-left: $sidePadding;
+    padding-left: 80px;
     padding-right: 80px;
+    justify-content:center;
     
     @media(min-width: $breakpointNav){
-        justify-content:center;
         padding-left:0;
         padding-right:0;
         padding-right: unset;
@@ -43,11 +44,11 @@
         height:auto;
         margin:0 auto;
         position:relative;
-        top:24px;
+        top: unset;
         z-index:1000000;
 
         @media(min-width: $breakpointNav){
-            top: 18px;
+            top: 30px;
         }
     }
 }
@@ -58,9 +59,9 @@
     flex-direction:column-reverse;
     position:absolute;
     width:100%;
-    top:100px;
+    top:70px;
     left:-100%;
-    background-color: $primaryAccentColor;
+    background-color: #f27721;
     z-index:999999;
     padding:0;
     transition: left 0.2s;
@@ -73,7 +74,7 @@
     }
 
     @media(min-width:$breakpointNav){
-        justify-content:space-between;
+        justify-content:center;
         position:initial;
         width:unset;
         max-width:unset;
@@ -87,6 +88,7 @@
         overflow: unset;
         overflow-x: unset;
         flex: 1 0 auto;
+        background-color: $primaryAccentColor;
     }
 }
 
@@ -96,10 +98,18 @@
     flex-wrap:nowrap;
     padding-left:$sidePadding;
     padding-right:$sidePadding;
+    width: 100%;
+    max-width: $breakpointSm;
+    margin-right: auto;
+    margin-left: auto;
 
     @media(min-width:$breakpointNav){
+        width: unset;
+        max-width: unset;
+        margin-right: unset;
+        margin-left: unset;
         flex-direction:row;
-        justify-content:space-between;
+        justify-content:flex-end;
         padding-left:unset;
         padding-right:unset;
         padding-top:unset;
@@ -109,11 +119,12 @@
 #site_main_nav_container{
     display:flex;
     align-items:center;
-    margin-top: 4rem;
+    margin-top: 8rem;
 
     @media(min-width: $breakpointNav){
-        order: unset;
+        order: 1;
         margin-top: unset;
+        flex-grow: 1;
     }
 }
 
@@ -130,12 +141,13 @@
     }
 
     .menu-item{
-        font-weight: 400;
+        font-weight: 900;
 
         a{
             font-size:2.5rem;
             color:black;
             text-decoration:none;
+            text-transform: uppercase;
         }
 
         &.menu-item-has-children{ 
@@ -168,7 +180,7 @@
                 padding-left:0.75em;
                 padding-right:0.75em;
                 color:white;
-                font-size: 1.7rem;
+                font-size: 1.5rem;
             }
 
             &:first-child{
@@ -216,19 +228,17 @@
 }
 
 #site_search_container{
+    padding-top: 2rem;
 
     @media(min-width: $breakpointNav){
-        padding-left: 1rem;
-        padding-top: 1rem;
-        order:unset;
+        padding-top: unset;
+        order: 3;
     }
 
     form{
         display:flex;
         flex-direction:row-reverse;
         flex-wrap:nowrap;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
 
         @media(min-width: $breakpointNav){
             padding-left: 1rem;
@@ -250,7 +260,7 @@
 
             @media(min-width: $breakpointNav){
                 width: 110px;
-                background: black;
+                background: $primaryAccentColor;
                 color: white;
                 font-weight: 600;
 
@@ -269,7 +279,7 @@
 
             @media(min-width: $breakpointNav){
                 color: white;
-                background: black;
+                background: $primaryAccentColor;
                 border-left: 2px solid white;
             }
         }
@@ -281,30 +291,30 @@
     flex-direction:row;
     flex-wrap:nowrap;
     align-items:center;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-top: 2rem;
     font-size: 2.5rem;
 
     @media(min-width: $breakpointNav){
         border-top: unset;
         border-bottom: unset;
-        order: unset;
+        order: 2;
         padding-top: unset;
         padding-bottom: unset;
         justify-content: unset;
         font-size:unset;
-        display: none;
     }
 
     svg{
         margin-left:0.3rem;
         margin-right:0.3rem;
-        color: black;
-        font-size: 32px;
+        color: white;
+        font-size: 3.2rem;
 
         @media(min-width: $breakpointNav){
-            color: $primaryAccentColor;
+            font-size: 2.4rem;
         }
     }
 }
@@ -316,10 +326,10 @@
     top:0;
     right:0;
     text-align:center;
-    padding:2rem;
+    padding:0.75rem 2rem;
     font-size:42px;
     z-index:999999;
-    background-color: black;
+    background-color: $primaryAccentColor;
     color: white;
 
     @media(min-width: $breakpointNav){
@@ -328,6 +338,6 @@
 }
 
 .custom-logo{
-    width: 240px;
+    width: 180px;
     height: auto;
 }
