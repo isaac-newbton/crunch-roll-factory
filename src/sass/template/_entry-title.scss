@@ -1,0 +1,17 @@
+.entry_header {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.entry_title {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+    border: 5px solid $primaryAccentColor;
+    border-radius: 9px;
+    display: inline-block;
+    padding: 1.5rem 3.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}

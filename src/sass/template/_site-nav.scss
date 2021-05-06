@@ -166,6 +166,10 @@
 
         &.current-menu-item {
             font-weight: bold;
+
+            a {
+                color: white;
+            }
         }
     }
 
@@ -181,6 +185,13 @@
                 padding-right:0.75em;
                 color:white;
                 font-size: 1.5rem;
+            }
+
+            &.current-menu-item {
+
+                a {
+                    color: black;
+                }
             }
 
             &:first-child{

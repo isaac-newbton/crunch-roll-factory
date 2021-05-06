@@ -111,4 +111,31 @@ if(function_exists('acf_add_local_field_group')){
 		'position'=>'acf_after_title',
 		'active'=>true
 	]);
+
+	acf_add_local_field_group([
+		'key'=>'group_foodservice',
+		'title'=>'Foodservice Options',
+		'fields'=>[
+			[
+				'key'=>'field_background',
+				'label'=>'Background',
+				'name'=>'background',
+				'type'=>'image',
+				'return_format'=>'url',
+				'preview_size'=>'medium',
+				'library'=>'all'
+			]
+		],
+		'location'=>[
+			[
+				[
+					'param'=>'page_template',
+					'operator'=>'==',
+					'value'=>'page_foodservice.php'
+				]
+			]
+		],
+		'position'=>'acf_after_title',
+		'active'=>true
+	]);
 }

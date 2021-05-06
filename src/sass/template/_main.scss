@@ -1,0 +1,25 @@
+.site_main {
+    background-image: url(../img/black-bg-page.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+
+    @media(min-width: $breakpointNav) {
+        padding-top: 3.5rem;
+    }
+
+    > article {
+        width: 100%;
+        max-width: $breakpointMd;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: $sidePadding;
+        padding-right: $sidePadding;
+    }
+}
+
+.dark_bg {
+    color: white;
+}

@@ -4,10 +4,17 @@
 
         .wpforms-form {
 
+            .wpforms-submit-container {
+                text-align: center;
+            }
+
             button[type=submit] {
                 background-color: $primaryAccentColor;
-                color: black;
+                color: white;
                 border: none;
+                text-transform: uppercase;
+                padding: 10px 40px;
+                border-radius: 1.5rem;
 
                 &:hover, &:focus {
                     outline: none;
@@ -16,7 +23,7 @@
                 }
 
                 &:focus {
-                    outline: 2px dotted $primaryAccentColor;
+                    outline: 1px dotted $primaryAccentColor;
                 }
             }
         }
@@ -32,4 +39,14 @@
         color: black;
         border: none;
     }
+}
+
+div.wpforms-container-full .wpforms-form input:focus, div.wpforms-container-full .wpforms-form textarea:focus, div.wpforms-container-full .wpforms-form select:focus, div.wpforms-container-full .wpforms-form .is-focused .choices__inner, div.wpforms-container-full .wpforms-form .is-open .choices__inner, div.wpforms-container-full .wpforms-form .is-open .choices__list--dropdown {
+    border: 1px solid $primaryAccentColor;
+    outline: 1px $primaryAccentColor dotted;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-required-label {
+    color: $primaryAccentColor;
+    font-weight: 900;
 }
