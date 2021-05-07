@@ -1,0 +1,82 @@
+#foodservice_main {
+    background-position: top;
+    background-size: cover;
+    background-color: #aaa;
+    background-blend-mode: multiply;
+
+    > * {
+        width: 100%;
+        max-width: $breakpointMd;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .entry_content {
+        padding: 0 $sidePadding 360px;
+
+        p {
+            text-shadow: 0 2px 3px black;
+        }
+    }
+}
+
+#foodservice_list_products {
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+
+    > ul {
+        width: 100%;
+        max-width: $breakpointLg;
+        margin-right: auto;
+        margin-left: auto;
+        list-style: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+
+        .foodservice_product {
+            text-align: center;
+            width: 100%;
+            max-width: 360px;
+            padding: 30px;
+            margin-left: auto;
+            margin-right: auto;
+
+            .thumbnail_container {
+                font-size: 0;
+
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+
+            .title_container {
+                font-weight: bold;
+                font-size: 1.25em;
+                margin-top: 0.5em;
+            }
+
+            .button_container {
+                margin-top: 0.5em;
+
+                a.button {
+                    display: inline-block;
+                    font-size: 0.875em;
+                }
+            }
+        }
+
+        @media(min-width: $breakpointLg) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .foodservice_product {
+                flex: 0 1 33%;
+            }
+        }
+    }
+}
