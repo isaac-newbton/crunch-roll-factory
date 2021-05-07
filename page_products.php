@@ -17,13 +17,11 @@ $query = new WP_Query($args);
 
 <div id="primary">
 
-    <main id="main" class="site_main dark_bg">
+    <main id="main" class="site_main dark_bg products">
 
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
             <header class="entry_header">
                 <?php the_title('<h1 class="entry_title">', '</h1>'); ?>
-            </header>
-            <div class="entry_content">
                 <?php the_content(); ?>
                 <?php if($query->have_posts()): ?>
 
@@ -33,7 +31,7 @@ $query = new WP_Query($args);
                             <?php while($query->have_posts()): $query->the_post(); ?>
 
                                 <li>
-                                    <a href="#<?=get_post_field('post_name')?>"><?=get_field('button_title')?></a>
+                                    <a href="#<?=get_post_field('post_name')?>" class="button" style="background-color: <?=get_field('opener_button_color')?>"><?=get_field('button_title')?></a>
                                 </li>
 
                             <?php endwhile; ?>
@@ -42,7 +40,8 @@ $query = new WP_Query($args);
                     </nav>
 
                 <?php $query = new WP_Query($args); endif; ?>
-
+            </header>
+            <div class="entry_content">
                 <section class="products_container">
                     
                     <?php if($query->have_posts()): ?>
@@ -67,31 +66,60 @@ $query = new WP_Query($args);
 
                             ?>
 
-                                <li class="product">
-                                    <div class="background">
-                                        <img class="default" src="<?=$background?>" alt="">
-                                        <img class="large" src="<?=$backgroundDesktop?>" alt="">
-                                    </div>
+                                <li class="product" id="<?=get_post_field('post_name')?>" style="background-color: <?=$btnColor?>;">
                                     <div class="primary_content_container">
                                         <div class="content_text">
                                             <h2><?php the_title(); ?></h2>
-                                            <?php the_content(); ?>
+                                            <div class="content"><?php the_content(); ?></div>
                                         </div>
                                         <div class="package_images">
                                             <ul class="slides">
-                                                <li class="active">
+                                                <li id="<?=get_post_field('post_name')?>_pkg_front" class="active">
                                                     <img src="<?=$pkgFront?>" alt="Front packaging">
                                                 </li>
-                                                <li class="">
+                                                <li id="<?=get_post_field('post_name')?>_pkg_back">
                                                     <img src="<?=$pkgBack?>" alt="Back packaging">
                                                 </li>
                                             </ul>
                                             <ul class="slides_nav">
                                                 <li>
-                                                    <button type="button">Front</button>
+                                                    <button type="button" class="package_image_button active" data-target="<?=get_post_field('post_name')?>_pkg_front">Front</button>
                                                 </li>
                                                 <li>
-                                                    <button type="button">Back</button>
+                                                    <button type="button" class="package_image_button" data-target="<?=get_post_field('post_name')?>_pkg_back">Back</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="openers_container">
+                                            <ul class="openers">
+                                                <li>
+                                                    <button type="button" class="opener" data-target="<?=get_post_field('post_name')?>_ingredients" style="color: <?=$btnColor?>;">Ingredients</button>
+                                                    <div id="<?=get_post_field('post_name')?>_ingredients" class="opener_target ingredients" style="background-color: <?=$openerColor?>;">
+                                                        <?=$ingredients?>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <button type="button" class="opener" data-target="<?=get_post_field('post_name')?>_heating_instructions" style="color: <?=$btnColor?>;">Heating Instructions</button>
+                                                    <div id="<?=get_post_field('post_name')?>_heating_instructions" class="opener_target heating_instructions" style="background-color: <?=$openerColor?>;">
+                                                        <header>
+                                                            <img src="<?=get_template_directory_uri()?>/assets/img/heating-instructions.png" alt="Heating Instructions">
+                                                            <?=$heatingInstructions?>
+                                                        </header>
+                                                        <ul class="heating_instructions_sections">
+                                                            <li>
+                                                                <img src="<?=get_template_directory_uri()?>/assets/img/inst-icon-air-fryer.png" alt="Air Fryer">
+                                                                <?=$heatingInstructionsAirFryer?>
+                                                            </li>
+                                                            <li>
+                                                                <img src="<?=get_template_directory_uri()?>/assets/img/inst-icon-oven.png" alt="Oven">
+                                                                <?=$heatingInstructionsOven?>
+                                                            </li>
+                                                            <li>
+                                                                <img src="<?=get_template_directory_uri()?>/assets/img/inst-icon-deep-fryer.png" alt="Deep Fryer">
+                                                                <?=$heatingInstructionsDeepFryer?>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </li>
                                             </ul>
                                         </div>
@@ -105,6 +133,7 @@ $query = new WP_Query($args);
                     <?php endif; ?>
 
                 </section>
+                <div class="products_end"></div>
             </div>
         </article>
 
