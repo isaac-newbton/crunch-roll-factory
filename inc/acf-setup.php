@@ -30,9 +30,27 @@ if(function_exists('acf_add_local_field_group')){
 				'library'=>'all'
 			],
 			[
-				'key'=>'field_background_large',
-				'label'=>'Background (Desktop)',
-				'name'=>'background_large',
+				'key'=>'field_bottom_image',
+				'label'=>'Bottom Image (Background)',
+				'name'=>'bottom_image',
+				'type'=>'image',
+				'return_format'=>'url',
+				'preview_size'=>'medium',
+				'library'=>'all'
+			],
+			[
+				'key'=>'field_left_image',
+				'label'=>'Left Image (Background)',
+				'name'=>'left_image',
+				'type'=>'image',
+				'return_format'=>'url',
+				'preview_size'=>'medium',
+				'library'=>'all'
+			],
+			[
+				'key'=>'field_right_image',
+				'label'=>'Right Image (Background)',
+				'name'=>'right_image',
 				'type'=>'image',
 				'return_format'=>'url',
 				'preview_size'=>'medium',

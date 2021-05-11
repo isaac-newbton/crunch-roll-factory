@@ -9,6 +9,10 @@ if(0 < openers.length) {
                 scroll = document.querySelector(`#${e.target.dataset.scroll}`);
             }
             target.classList.toggle('active');
+            closeButton = target.querySelector('.opener_close_button');
+            if(closeButton) {
+                closeButton.focus();
+            }
             if(target.classList.contains('active')){
                 if(scroll){
                     scroll.scrollIntoView();
@@ -16,6 +20,16 @@ if(0 < openers.length) {
                     target.scrollIntoView();
                 }
             }
+        });
+    }
+}
+
+let openerCloseButtons = document.querySelectorAll('.opener_close_button');
+if(0< openerCloseButtons.length) {
+    for(let button of openerCloseButtons) {
+        button.addEventListener('click', function(e){
+            e.preventDefault();
+            e.target.parentElement.classList.remove('active');
         });
     }
 }

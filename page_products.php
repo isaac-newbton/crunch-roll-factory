@@ -63,10 +63,13 @@ $query = new WP_Query($args);
                                 $heatingInstructionsDeepFryer = get_field('heating_instructions_deep_fryer');
                                 $btnColor = get_field('opener_button_color');
                                 $openerColor = get_field('opener_background_color');
+                                $bottomImage = get_field('bottom_image');
+                                $leftImage = get_field('left_image');
+                                $rightImage = get_field('right_image');
 
                             ?>
 
-                                <li class="product" id="<?=get_post_field('post_name')?>" style="background-color: <?=$btnColor?>;">
+                                <li class="product" id="<?=get_post_field('post_name')?>" style="background-color: <?=$btnColor?>; background-image: url(<?=$background?>);">
                                     <div class="primary_content_container">
                                         <div class="content_text">
                                             <h2><?php the_title(); ?></h2>
@@ -94,35 +97,48 @@ $query = new WP_Query($args);
                                             <ul class="openers">
                                                 <li>
                                                     <button type="button" class="opener" data-target="<?=get_post_field('post_name')?>_ingredients" style="color: <?=$btnColor?>;">Ingredients</button>
-                                                    <div id="<?=get_post_field('post_name')?>_ingredients" class="opener_target ingredients" style="background-color: <?=$openerColor?>;">
-                                                        <?=$ingredients?>
-                                                    </div>
                                                 </li>
                                                 <li>
                                                     <button type="button" class="opener" data-target="<?=get_post_field('post_name')?>_heating_instructions" style="color: <?=$btnColor?>;">Heating Instructions</button>
-                                                    <div id="<?=get_post_field('post_name')?>_heating_instructions" class="opener_target heating_instructions" style="background-color: <?=$openerColor?>;">
-                                                        <header>
-                                                            <img src="<?=get_template_directory_uri()?>/assets/img/heating-instructions.png" alt="Heating Instructions">
-                                                            <?=$heatingInstructions?>
-                                                        </header>
-                                                        <ul class="heating_instructions_sections">
-                                                            <li>
-                                                                <img src="<?=get_template_directory_uri()?>/assets/img/inst-icon-air-fryer.png" alt="Air Fryer">
-                                                                <?=$heatingInstructionsAirFryer?>
-                                                            </li>
-                                                            <li>
-                                                                <img src="<?=get_template_directory_uri()?>/assets/img/inst-icon-oven.png" alt="Oven">
-                                                                <?=$heatingInstructionsOven?>
-                                                            </li>
-                                                            <li>
-                                                                <img src="<?=get_template_directory_uri()?>/assets/img/inst-icon-deep-fryer.png" alt="Deep Fryer">
-                                                                <?=$heatingInstructionsDeepFryer?>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
                                                 </li>
                                             </ul>
                                         </div>
+                                    </div>
+                                    <div class="background_images_container">
+                                        <?php if($leftImage): ?>
+                                            <img src="<?=$leftImage?>" alt="" class="left">
+                                        <?php endif; ?>
+                                        <?php if($rightImage): ?>
+                                            <img src="<?=$rightImage?>" alt="" class="right">
+                                        <?php endif; ?>
+                                        <?php if($bottomImage): ?>
+                                            <img src="<?=$bottomImage?>" alt="" class="bottom">
+                                        <?php endif; ?>
+                                    </div>
+                                    <div id="<?=get_post_field('post_name')?>_ingredients" class="opener_target ingredients" style="background-color: <?=$openerColor?>;">
+                                        <?=$ingredients?>
+                                        <button type="button" class="opener_close_button">Close</button>
+                                    </div>
+                                    <div id="<?=get_post_field('post_name')?>_heating_instructions" class="opener_target heating_instructions" style="background-color: <?=$openerColor?>;">
+                                        <header>
+                                            <img src="<?=get_template_directory_uri()?>/assets/img/heating-instructions.png" alt="Heating Instructions">
+                                            <?=$heatingInstructions?>
+                                        </header>
+                                        <ul class="heating_instructions_sections">
+                                            <li>
+                                                <img src="<?=get_template_directory_uri()?>/assets/img/inst-icon-air-fryer.png" alt="Air Fryer">
+                                                <?=$heatingInstructionsAirFryer?>
+                                            </li>
+                                            <li>
+                                                <img src="<?=get_template_directory_uri()?>/assets/img/inst-icon-oven.png" alt="Oven">
+                                                <?=$heatingInstructionsOven?>
+                                            </li>
+                                            <li>
+                                                <img src="<?=get_template_directory_uri()?>/assets/img/inst-icon-deep-fryer.png" alt="Deep Fryer">
+                                                <?=$heatingInstructionsDeepFryer?>
+                                            </li>
+                                        </ul>
+                                        <button type="button" class="opener_close_button">Close</button>
                                     </div>
                                 </li>
 
