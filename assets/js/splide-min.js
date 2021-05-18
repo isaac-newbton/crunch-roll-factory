@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){new Splide(".splide",{type:"loop",width:"100%",heightRatio:"0.67",pagination:!1,autoplay:!0,interval:8e3,cover:!0,video:{autoplay:!0,mute:!0,disableOverlayUI:!0,hideControls:!0}}).mount(window.splide.Extensions)});

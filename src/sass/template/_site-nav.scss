@@ -68,6 +68,7 @@
     max-height: 100vh;
     overflow: auto;
     overflow-x: hidden;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
 
     &.active{
         left:0;

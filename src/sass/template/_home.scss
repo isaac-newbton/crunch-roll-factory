@@ -1,0 +1,112 @@
+#home_products {
+    background-image: url(../img/black-bg-page.jpg);
+    background-size: cover;
+    padding: 8rem 0;
+
+    ul.products {
+        width: 100%;
+        max-width: $breakpointLg;
+        margin-right: auto;
+        margin-left: auto;
+        list-style: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+
+        .homepage_product {
+            text-align: center;
+            width: 100%;
+            max-width: 360px;
+            padding: 30px;
+            margin-left: auto;
+            margin-right: auto;
+
+            .thumbnail_container {
+                font-size: 0;
+
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+
+            .title_container {
+                font-weight: bold;
+                font-size: 1.25em;
+                margin-top: 0.5em;
+            }
+
+            .button_container {
+                margin-top: 0.5em;
+
+                a.button {
+                    display: inline-block;
+                    font-size: 0.875em;
+                }
+            }
+        }
+
+        @media(min-width: $breakpointLg) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .foodservice_product {
+                flex: 0 1 33%;
+            }
+        }
+    }
+}
+
+#home_social {
+    background-size: cover;
+    padding: 10rem 0;
+}
+
+ul.social_feed {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    > li {
+        display: block;
+        padding: 1rem;
+        margin: 0 auto;
+        max-width: 320px;
+        background: white;
+        margin-bottom: 2rem;
+
+        > div {
+            background: #efefef;
+            width: 100%;
+            height: 360px;
+        }
+    }
+
+    @media(min-width: $breakpointLg) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        > li {
+            flex: 0 0 calc(50% - 2rem);
+            max-width: unset;
+        }
+
+        &.thirds {
+
+            > li {
+                flex: 0 0 calc(33.333% - 2rem);
+            }
+        }
+
+        &.fourths {
+
+            > li {
+                flex: 0 0 calc(25% - 2rem);
+            }
+        }
+    }
+}
