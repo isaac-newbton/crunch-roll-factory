@@ -41,7 +41,7 @@ $query = new WP_Query($args);
                                     <?php the_post_thumbnail('medium'); ?>
                                 </div>
                                 <div class="title_container">
-                                    <?php the_title(); ?>
+                                    <?=str_replace(' Crunch Rolls', '<br/>Crunch Rolls', get_the_title())?>
                                 </div>
                                 <div class="button_container">
                                     <a href="/products/#<?=get_post_field('post_name')?>" class="button" style="background-color: <?=get_field('opener_button_color')?>">More&nbsp;Info</a>

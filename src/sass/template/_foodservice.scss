@@ -1,8 +1,9 @@
 #foodservice_main {
-    background-position: top;
+    background-position: 50% 70%;
     background-size: cover;
     background-color: #aaa;
     background-blend-mode: multiply;
+    min-height: max(80vh, 50vw);
 
     > * {
         width: 100%;

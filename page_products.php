@@ -72,7 +72,7 @@ $query = new WP_Query($args);
                                 <li class="product" id="<?=get_post_field('post_name')?>" style="background-color: <?=$btnColor?>; background-image: url(<?=$background?>);">
                                     <div class="primary_content_container">
                                         <div class="content_text">
-                                            <h2><?php the_title(); ?></h2>
+                                            <h2><?=str_replace(' Crunch Rolls', '<br/>Crunch Rolls', get_the_title())?></h2>
                                             <div class="content"><?php the_content(); ?></div>
                                         </div>
                                         <div class="package_images">

@@ -114,6 +114,7 @@ main.products {
 
                     .content_text {
                         grid-area: text;
+                        text-transform: uppercase;
                     }
 
                     .package_images {
@@ -612,10 +613,15 @@ main.products {
         .title_container {
             margin-bottom: 2rem;
             font-weight: bold;
+            line-height: 1;
         }
 
         .button_container {
 
         }
     }
+}
+
+.products .title_container {
+    line-height: 1;
 }
