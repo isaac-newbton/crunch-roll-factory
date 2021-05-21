@@ -44,7 +44,7 @@ $query = new WP_Query($args);
                                     <?php the_title(); ?>
                                 </div>
                                 <div class="button_container">
-                                    <a href="<?php the_permalink(); ?>" class="button" style="background-color: <?=get_field('opener_button_color')?>">More&nbsp;Info</a>
+                                    <a href="/products/#<?=get_post_field('post_name')?>" class="button" style="background-color: <?=get_field('opener_button_color')?>">More&nbsp;Info</a>
                                 </div>
                             </li>
                         <?php endwhile; wp_reset_postdata(); ?>

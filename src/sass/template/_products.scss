@@ -413,3 +413,209 @@ main.products {
     height: 50vh;
     min-height: 300px;
 }
+
+.single_product {
+
+    article.product {
+        width: 100%;
+        max-width: unset;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .entry_content {
+
+        .product_info {
+            padding-top: 2rem;
+
+            @media(min-width: $breakpointLg) {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                margin-top: 8rem;
+                margin-bottom: 8rem;
+
+                > .package_images {
+                    flex: 0 0 50%;
+                }
+
+                > .description {
+                    flex: 0 0 50%;
+                }
+            }
+
+            .package_images {
+                margin-bottom: 3rem;
+
+                @media(min-width: $breakpointLg) {
+                    margin-bottom: 0;
+                }
+
+                > ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+
+                    li {
+                        margin: 0;
+                        padding: 0;
+
+                        img {
+                            display: block;
+                            max-width: 100%;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+                    }
+                }
+
+                > ul.slides {
+                    overflow: hidden;
+                    position: relative;
+
+                    > li {
+                        display: none;
+
+                        &.active {
+                            display: block;
+                        }
+                    }
+                }
+
+                > ul.slides_nav {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    button {
+                        font-size: 0;
+                        width: 30px;
+                        height: 30px;
+                        background-color: black;
+                        border: 2px solid white;
+                        border-radius: 100%;
+                        margin: 0 15px;
+
+                        &.active {
+                            background-color: white;
+                        }
+                    }
+                }
+            }
+
+            .description {
+
+                .ingredients {
+                    border-top: 1px solid rgba(255,255,255,0.25);
+                    font-size: 75%;
+                    padding-top: 1em;
+                }
+            }
+        }
+
+        .heating_instructions {
+            text-align: center;
+            width: 100%;
+            padding: 8rem 8rem;
+            color: black;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+
+            img {
+                display: inline-block;
+                max-width: 100%;
+                height: auto;
+            }
+
+            > header, > ul {
+                width: 100%;
+                max-width: $breakpointSm;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            @media(min-width: $breakpointNav){
+
+                > ul {
+                    max-width: $maxContentWidth;
+                }
+            }
+
+            ul.heating_instructions_sections {
+                list-style: none;
+                margin-top: 0;
+                margin-bottom: 0;
+                padding: 0;
+
+                @media(min-width: $breakpointNav) {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                }
+
+                > li {
+                    margin: 0;
+                    padding: 0;
+
+                    @media(min-width: $breakpointNav) {
+                        box-sizing: border-box;
+                        padding: 2rem;
+                        flex: 1 1 33%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.more_products {
+    margin-top: 8rem;
+    text-align: center;
+
+    > h2 {
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        > li {
+            margin-bottom: 4rem;
+        }
+
+        @media(min-width: $breakpointLg) {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            > li {
+                flex: 0 0 32%;
+                box-sizing: border-box;
+                padding: 1rem;
+            }
+        }
+
+
+
+        .thumbnail_container {
+            margin-bottom: 1rem;
+
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .title_container {
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .button_container {
+
+        }
+    }
+}

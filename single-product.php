@@ -57,10 +57,10 @@ $query = new WP_Query($args);
                     </div>
                     <div class="description">
                         <?php the_content(); ?>
+                        <div class="ingredients">
+                            <?=$ingredients?>
+                        </div>
                     </div>
-                </section>
-                <section class="ingredients standard_width_content side_padding">
-                    <?=$ingredients?>
                 </section>
                 <section class="heating_instructions side_padding" style="background-color: <?=$btnColor?>">
                     <header>
