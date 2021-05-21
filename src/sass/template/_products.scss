@@ -43,7 +43,7 @@ main.products {
             display: flex;
             flex-direction: row;
             max-width: 100rem;
-            justify-content: center;
+            justify-content: space-evenly;
 
             > li {
                 flex: 1 1 33%;
@@ -53,7 +53,7 @@ main.products {
 
         > li {
             width: 100%;
-            margin: 0;
+            margin: 0 0 2rem;
             padding: 0;
 
             > a.button {
@@ -77,6 +77,9 @@ main.products {
         width: 100%;
         margin: 0;
         padding: 0;
+        background-image: url(../img/wood-bg-top.jpg);
+        background-size: 100%;
+        background-repeat: repeat-y;
 
         > li.product {
             width: 100%;
@@ -86,6 +89,10 @@ main.products {
             background-size: 100%;
             background-repeat: repeat;
             box-shadow: 0 12px 96px black;
+
+            &:not(:first-child) {
+                margin-top: 300px;
+            }
 
             .primary_content_container {
                 position: relative;

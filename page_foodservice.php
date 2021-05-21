@@ -34,7 +34,7 @@ $query = new WP_Query($args);
             <?php if($query->have_posts()): ?>
 
                 <section id="foodservice_list_products">
-                    <ul>
+                    <ul class="products">
                         <?php while($query->have_posts()): $query->the_post(); ?>
                             <li class="foodservice_product">
                                 <div class="thumbnail_container">

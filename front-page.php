@@ -40,8 +40,8 @@ $query = new WP_Query($args);
         <?php if($query->have_posts()): ?>
 
             <section id="home_products">
-                <div class="standard_width_content side_padding">
-                    <header>
+                <div>
+                    <header class="side_padding">
                         <img src="<?=get_field('products_banner')?>" alt="">
                         <?=get_field('products_text')?>
                     </header>
@@ -121,10 +121,6 @@ $query = new WP_Query($args);
                 </ul>
             </div>
         </section>
-
-        <div class="entry_content">
-            <?php the_content(); ?>
-        </div>
 
     </article>
 

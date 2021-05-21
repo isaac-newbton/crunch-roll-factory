@@ -3,6 +3,28 @@
     background-size: cover;
     padding: 8rem 0;
 
+    > div > header {
+        max-width: 80rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 4rem;
+        text-align: center;
+        font-size: 2rem;
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            font-weight: bold;
+        }
+    }
+
     ul.products {
         width: 100%;
         max-width: $breakpointLg;
@@ -33,7 +55,7 @@
 
             .title_container {
                 font-weight: bold;
-                font-size: 1.25em;
+                font-size: 1.5em;
                 margin-top: 0.5em;
             }
 
@@ -51,10 +73,90 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
 
-            .foodservice_product {
+            .homepage_product {
                 flex: 0 1 33%;
+            }
+        }
+    }
+
+    .heating_instructions_container {
+        padding-top: 1rem;
+
+        button {
+            font-size: 1.7rem;
+            font-weight: 900;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            color: black;
+            background: white;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .opener_target {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+
+        .heating_instructions {
+            background: $primaryAccentColor;
+            color: black;
+            padding: 9rem $sidePadding 6rem;
+            position: relative;
+            top: -2rem;
+            z-index: 1;
+            text-align: center;
+
+            img {
+                display: inline-block;
+                max-width: 100%;
+                height: auto;
+            }
+
+            > header, > ul {
+                width: 100%;
+                max-width: $breakpointSm;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            @media(min-width: $breakpointNav){
+
+                > ul {
+                    max-width: $maxContentWidth;
+                }
+            }
+
+            ul.heating_instructions_sections {
+                list-style: none;
+                margin-top: 0;
+                margin-bottom: 0;
+                padding: 0;
+
+                @media(min-width: $breakpointNav) {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                }
+
+                > li {
+                    margin: 0;
+                    padding: 0;
+
+                    @media(min-width: $breakpointNav) {
+                        box-sizing: border-box;
+                        padding: 2rem;
+                        flex: 1 1 33%;
+                    }
+                }
             }
         }
     }
