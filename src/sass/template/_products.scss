@@ -115,6 +115,10 @@ main.products {
                     .content_text {
                         grid-area: text;
                         text-transform: uppercase;
+
+                        h2 {
+                            text-transform: unset;
+                        }
                     }
 
                     .package_images {
