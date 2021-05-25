@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
     let splide = new Splide('.splide', {
         type: 'loop',
         width: '100%',
-        heightRatio: '0.67',
+        height: '85vh',
         pagination: false,
         autoplay: false,
         cover: true,
