@@ -92,7 +92,7 @@ $query = new WP_Query($args);
 
         <?php endif; ?>
 
-        <section id="home_social" style="background-image: url(<?=get_field('social_feed_background')?>);">
+        <!-- <section id="home_social" style="background-image: url(<?=get_field('social_feed_background')?>);">
             <div class="standard_width_content side_padding">
                 <ul class="social_feed thirds">
                     <li>
@@ -120,7 +120,7 @@ $query = new WP_Query($args);
                     </li>
                 </ul>
             </div>
-        </section>
+        </section> -->
 
     </article>
 

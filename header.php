@@ -36,18 +36,25 @@
                             'container_id'=>'site_main_nav_container'
                         ]); ?>
 
-                        <div id="site_search_container">
-                            <form action="/" class="search" role="search">
-                                <label for="site_search_input" id="site_search_input_label" class="sr_only">Search</label>
-                                <input type="text" name="s" id="site_search_input" placeholder="search..." value="<?php the_search_query(); ?>" aria-labelledby="search_input_label">
-                                <button type="submit" aria-label="Submit"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
+                        <?php if(get_search_query()): ?>
+                            <div id="site_search_container">
+                                <form action="/" class="search" role="search">
+                                    <label for="site_search_input" id="site_search_input_label" class="sr_only">Search</label>
+                                    <input type="text" name="s" id="site_search_input" placeholder="search..." value="<?php the_search_query(); ?>" aria-labelledby="search_input_label">
+                                    <button type="submit" aria-label="Submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        <?php endif; ?>
 
                         <div id="site_social_container">
                             <?php if($fbUrl = get_option('aca_facebook_profile_url')): ?>
                                 <a href="<?=esc_attr($fbUrl)?>" title="Facebook">
                                     <i class="fab fa-facebook-square"></i>
+                                </a>
+                            <?php endif; ?>
+                            <?php if($inUrl = get_option('aca_instagram_profile_url')): ?>
+                                <a href="<?=esc_attr($inUrl)?>" title="Instagram">
+                                    <i class="fab fa-instagram-square"></i>
                                 </a>
                             <?php endif; ?>
                             <?php if($twUrl = get_option('aca_twitter_profile_url')): ?>

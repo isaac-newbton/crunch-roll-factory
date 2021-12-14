@@ -26,6 +26,11 @@
                         <i class="fab fa-facebook-square"></i>
                     </a>
                 <?php endif; ?>
+                <?php if($inUrl = get_option('aca_instagram_profile_url')): ?>
+                    <a href="<?=esc_attr($inUrl)?>" title="Instagram">
+                        <i class="fab fa-instagram-square"></i>
+                    </a>
+                <?php endif; ?>
                 <?php if($twUrl = get_option('aca_twitter_profile_url')): ?>
                     <a href="<?=esc_attr($twUrl)?>" title="Twitter">
                         <i class="fab fa-twitter-square"></i>

@@ -13,6 +13,7 @@ function aca_custom_settings(){
     register_setting('aca-settings', 'aca_footer_logo');
     register_setting('aca-settings', 'aca_copyright_text');
     register_setting('aca-settings', 'aca_facebook_profile_url', 'sanitize_social_url');
+    register_setting('aca-settings', 'aca_instagram_profile_url', 'sanitize_social_url');
     register_setting('aca-settings', 'aca_twitter_profile_url', 'sanitize_social_url');
     register_setting('aca-settings', 'aca_linkedin_profile_url', 'sanitize_social_url');
 
@@ -21,6 +22,7 @@ function aca_custom_settings(){
     add_settings_field('aca-footer-logo', 'Footer Logo', 'aca_footer_logo', 'aca_theme', 'aca-theme-settings');
     add_settings_field('aca-copyright-text', 'Copyright Text', 'aca_copyright_text', 'aca_theme', 'aca-theme-settings');
     add_settings_field('aca-social-fb', 'Facebook URL', 'aca_facebook_url', 'aca_theme', 'aca-theme-settings');
+    add_settings_field('aca-social-in', 'Instagram URL', 'aca_instagram_url', 'aca_theme', 'aca-theme-settings');
     add_settings_field('aca-social-tw', 'Twitter URL', 'aca_twitter_url', 'aca_theme', 'aca-theme-settings');
     add_settings_field('aca-social-li', 'Linkedin URL', 'aca_linkedin_url', 'aca_theme', 'aca-theme-settings');
 }
@@ -38,6 +40,11 @@ function aca_copyright_text(){
 function aca_facebook_url(){
     $value = esc_attr(get_option('aca_facebook_profile_url'));
     echo '<input type="text" name="aca_facebook_profile_url" class="regular-text" value="'.$value.'" />';
+}
+
+function aca_instagram_url(){
+    $value = esc_attr(get_option('aca_instagram_profile_url'));
+    echo '<input type="text" name="aca_instagram_profile_url" class="regular-text" value="'.$value.'" />';
 }
 
 function aca_twitter_url(){
