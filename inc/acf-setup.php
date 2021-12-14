@@ -141,6 +141,99 @@ if(function_exists('acf_add_local_field_group')){
 	]);
 
 	acf_add_local_field_group([
+		'key'=>'group_about',
+		'title'=>'About Options',
+		'fields'=>[
+			[
+				'key'=>'field_our_product_content',
+				'label'=>'Our Product',
+				'name'=>'our_product_content',
+				'type'=>'wysiwyg',
+			],
+			[
+				'key'=>'field_our_product_thumbnail',
+				'label'=>'Our Product Thumbnail',
+				'name'=>'our_product_thumbnail',
+				'type'=>'image',
+				'return_format'=>'array',
+				'preview_size'=>'medium',
+				'library'=>'all',
+			],
+			[
+				'key'=>'field_our_product_video',
+				'label'=>'Our Product Video',
+				'name'=>'our_product_video',
+				'type'=>'url',
+			],
+			[
+				'key'=>'field_our_past_content',
+				'label'=>'Our Past',
+				'name'=>'our_past_content',
+				'type'=>'wysiwyg',
+			],
+			[
+				'key'=>'field_our_past_mobile_image',
+				'label'=>'Our Past Image (Mobile)',
+				'name'=>'our_past_mobile_image',
+				'type'=>'image',
+				'return_format'=>'array',
+				'preview_size'=>'medium',
+				'library'=>'all',
+			],
+			[
+				'key'=>'field_our_past_left_image',
+				'label'=>'Our Past Image (Left)',
+				'name'=>'our_past_left_image',
+				'type'=>'image',
+				'return_format'=>'array',
+				'preview_size'=>'medium',
+				'library'=>'all',
+			],
+			[
+				'key'=>'field_our_past_right_image',
+				'label'=>'Our Past Image (Right)',
+				'name'=>'our_past_right_image',
+				'type'=>'image',
+				'return_format'=>'array',
+				'preview_size'=>'medium',
+				'library'=>'all',
+			],
+			[
+				'key'=>'field_our_present_content',
+				'label'=>'Our Present',
+				'name'=>'our_present_content',
+				'type'=>'wysiwyg',
+			],
+			[
+				'key'=>'field_our_present_image',
+				'label'=>'Our Present Image',
+				'name'=>'our_present_image',
+				'type'=>'image',
+				'return_format'=>'array',
+				'preview_size'=>'medium',
+				'library'=>'all',
+			],
+			[
+				'key'=>'field_our_mission_content',
+				'label'=>'Our Mission',
+				'name'=>'our_mission_content',
+				'type'=>'wysiwyg',
+			],
+		],
+		'location'=>[
+			[
+				[
+					'param'=>'page_template',
+					'operator'=>'==',
+					'value'=>'page_about.php',
+				],
+			],
+		],
+		'position'=>'acf_after_title',
+		'active'=>true,
+	]);
+
+	acf_add_local_field_group([
 		'key'=>'group_foodservice',
 		'title'=>'Foodservice Options',
 		'fields'=>[
