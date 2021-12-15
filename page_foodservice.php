@@ -7,14 +7,6 @@ get_header();
 
 $background = get_field('background');
 
-$args = [
-    'post_type'=>'product',
-    'posts_per_page'=>-1,
-    'orderby'=>'menu_order',
-    'order'=>'ASC'
-];
-$query = new WP_Query($args);
-
 ?>
 
 <div id="primary">
@@ -30,28 +22,31 @@ $query = new WP_Query($args);
                     <?php the_content(); ?>
                 </div>
             </section>
-            
-            <?php if($query->have_posts()): ?>
 
-                <section id="foodservice_list_products">
-                    <ul class="products">
-                        <?php while($query->have_posts()): $query->the_post(); ?>
-                            <li class="foodservice_product">
-                                <div class="thumbnail_container">
-                                    <?php the_post_thumbnail('medium'); ?>
-                                </div>
-                                <div class="title_container">
-                                    <?=str_replace(' Crunch Rolls', '<br/>Crunch Rolls', get_the_title())?>
-                                </div>
-                                <div class="button_container">
-                                    <a href="/products/#<?=get_post_field('post_name')?>" class="button" style="background-color: <?=get_field('opener_button_color')?>">More&nbsp;Info</a>
+            <?php if(have_rows('products')): ?>
+
+                <section class="foodservice_products">
+                    <ul class="foodservice_products_list">
+                        <?php while(have_rows('products')): the_row(); ?>
+                            <li style="background-image: url(<?=get_sub_field('background')?>)">
+                                <div class="foodservice_product_container" id="product-<?=get_sub_field('product')->ID?>">
+                                    <div class="foodservice_product_copy_container">
+                                        <div class="foodservice_product_copy">
+                                            <?=get_sub_field('copy')?>
+                                        </div>
+                                    </div>
+                                    <div class="foodservice_product_image_container">
+                                        <img src="<?=get_sub_field('image')['url']?>" alt="<?=get_sub_field('image')['alt']?>" class="foodersvice_product_image">
+                                    </div>
                                 </div>
                             </li>
-                        <?php endwhile; wp_reset_postdata(); ?>
+                        <?php endwhile; ?>
                     </ul>
                 </section>
 
             <?php endif; ?>
+
+            <section class="brick_breaker">&nbsp;</section>
         </article>
 
     </main>

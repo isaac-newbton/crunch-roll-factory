@@ -2,7 +2,6 @@
     background-position: 50% 70%;
     background-size: cover;
     background-color: black;
-    min-height: max(80vh, 50vw);
 
     > * {
         width: 100%;
@@ -12,70 +11,127 @@
     }
 
     .entry_content {
-        padding: 0 $sidePadding 360px;
+        padding: 0 $sidePadding max(63vh, max(50vw, 840px));
+        max-width: 38ch;
+        text-align: center;
 
         p {
-            text-shadow: 0 2px 3px black;
+            text-shadow: 0 3px 6px black;
+            line-height: 1.5;
+        }
+
+        strong, b {
+            font-weight: 900;
         }
     }
 }
 
-#foodservice_list_products {
-    padding-top: 5rem;
-    padding-bottom: 8rem;
+.foodservice_products_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
 
-    > ul {
-        width: 100%;
-        max-width: $breakpointLg;
-        margin-right: auto;
-        margin-left: auto;
-        list-style: none;
-        margin-top: 0;
-        margin-bottom: 0;
+    > li {
+        flex-basis: 100%;
+        display: block;
+        box-sizing: border-box;
+        margin: 0;
         padding: 0;
+        background-size: cover;
+    }
+}
 
-        .foodservice_product {
-            text-align: center;
-            width: 100%;
-            max-width: 360px;
-            padding: 30px;
-            margin-left: auto;
-            margin-right: auto;
+.foodservice_product_copy {
+    color: black;
+    margin: 6rem auto 2rem;
+    padding-left: $sidePadding;
+    padding-right: $sidePadding;
+    max-width: 36ch;
 
-            .thumbnail_container {
-                font-size: 0;
+    h1, h2, h3, h4, h5, h6 {
+        color: white;
+    }
 
-                img {
-                    display: block;
-                    max-width: 100%;
-                    height: auto;
-                }
+    p {
+        line-height: 1.25;
+    }
+}
+
+.foodersvice_product_image {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.brick_breaker {
+    background-image: url(../img/brick-bg.jpg);
+    background-position: bottom;
+    height: max(480px, 25vw);
+    background-size: cover;
+}
+
+@media(min-width: $breakpointLg) {
+    .foodservice_products_list > li {
+        flex-basis: 50%;
+        display: flex;
+    }
+
+    .foodservice_product_container {
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+    }
+
+    .foodservice_product_copy {
+        margin-top: 0;
+    }
+
+    .foodservice_product_copy_container {
+        flex-basis: calc(40ch + 60px);
+        display: flex;
+        align-items: center;
+        padding-bottom: 20rem;
+        padding-top: 0rem;
+    }
+
+    .foodservice_product_image_container {
+        position: relative;
+        flex: 1 1 auto;
+    }
+
+    .foodersvice_product_image {
+        position: absolute;
+        bottom: 0;
+        width: 720px;
+        max-width: unset;
+    }
+
+    .foodservice_products_list > li {
+
+        &:nth-child(2n+1) {
+
+            .foodservice_product_container {
+                flex-direction: row-reverse;
+                text-align: right;
             }
 
-            .title_container {
-                font-weight: bold;
-                font-size: 1.25em;
-                margin-top: 0.5em;
-            }
-
-            .button_container {
-                margin-top: 0.5em;
-
-                a.button {
-                    display: inline-block;
-                    font-size: 0.875em;
-                }
+            .foodersvice_product_image {
+                right: -30rem;
             }
         }
 
-        @media(min-width: $breakpointLg) {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            flex-wrap: wrap;
+        &:nth-child(2n) {
+            .foodersvice_product_image {
+                left: -30rem;
+            }
+        }
 
-            .foodservice_product {
-                flex: 0 1 33%;
+        &:nth-child(4) {
+            .foodersvice_product_image {
+                left: -20rem;
             }
         }
     }

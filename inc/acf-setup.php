@@ -244,20 +244,60 @@ if(function_exists('acf_add_local_field_group')){
 				'type'=>'image',
 				'return_format'=>'url',
 				'preview_size'=>'medium',
-				'library'=>'all'
-			]
-		],
+				'library'=>'all',
+			],
+			[
+				'key'=>'field_products',
+				'label'=>'Products',
+				'name'=>'products',
+				'type'=>'repeater',
+				'format'=>'rows',
+				'sub_fields'=>[
+					[
+						'key'=>'field_s_product',
+						'label'=>'Product',
+						'name'=>'product',
+						'type'=>'post_object',
+						'post_type'=>['product'],
+						'required'=>true,
+					],
+					[
+						'key'=>'field_s_copy',
+						'label'=>'Copy',
+						'name'=>'copy',
+						'type'=>'wysiwyg',
+						'required'=>true,
+					],
+					[
+						'key'=>'field_s_image',
+						'label'=>'Image',
+						'name'=>'image',
+						'type'=>'image',
+						'return_format'=>'array',
+						'required'=>true,
+					],
+					[
+						'key'=>'field_s_background',
+						'label'=>'Background',
+						'name'=>'background',
+						'type'=>'image',
+						'return_format'=>'url',
+						'required'=>true,
+					],
+				],
+			],
+		],	
 		'location'=>[
 			[
 				[
 					'param'=>'page_template',
 					'operator'=>'==',
-					'value'=>'page_foodservice.php'
-				]
-			]
+					'value'=>'page_foodservice.php',
+				],
+			],
 		],
 		'position'=>'acf_after_title',
-		'active'=>true
+		'active'=>true,
 	]);
 
 	acf_add_local_field_group([
