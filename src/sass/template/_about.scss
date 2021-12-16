@@ -144,17 +144,16 @@
                 position: absolute;
                 height: auto;
                 z-index: 1;
-                max-width: 20vw;
+                max-width: 30vw;
 
                 &.top {
                     left: 0;
-                    top: -15vw;
+                    top: max(-30vw, -500px);
                 }
 
                 &.bot {
                     right: 0;
                     bottom: 5vw;
-                    max-width: 30vw;
                 }
 
                 &.logo {
