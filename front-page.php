@@ -92,35 +92,11 @@ $query = new WP_Query($args);
 
         <?php endif; ?>
 
-        <!-- <section id="home_social" style="background-image: url(<?=get_field('social_feed_background')?>);">
+        <section id="home_social" style="background-image: url(<?=get_field('social_feed_background')?>);">
             <div class="standard_width_content side_padding">
-                <ul class="social_feed thirds">
-                    <li>
-                        <div></div>
-                    </li>
-                    <li>
-                        <div></div>
-                    </li>
-                    <li>
-                        <div></div>
-                    </li>
-                </ul>
-                <ul class="social_feed fourths">
-                    <li>
-                        <div></div>
-                    </li>
-                    <li>
-                        <div></div>
-                    </li>
-                    <li>
-                        <div></div>
-                    </li>
-                    <li>
-                        <div></div>
-                    </li>
-                </ul>
+                <?php the_content(); ?>
             </div>
-        </section> -->
+        </section>
 
     </article>
 
