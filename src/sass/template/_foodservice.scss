@@ -3,7 +3,7 @@
     background-size: cover;
     background-color: black;
 
-    > * {
+    > header, > .entry_content {
         width: 100%;
         max-width: $breakpointSm;
         margin-left: auto;
@@ -11,7 +11,7 @@
     }
 
     .entry_content {
-        padding: 0 $sidePadding max(63vh, max(50vw, 840px));
+        padding: 0 $sidePadding;
         max-width: 38ch;
         text-align: center;
 
@@ -22,6 +22,18 @@
 
         strong, b {
             font-weight: 900;
+        }
+    }
+
+    .trio_image_container {
+
+        > img {
+            display: block;
+            width: 100%;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            max-width: unset;
         }
     }
 }

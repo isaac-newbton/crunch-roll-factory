@@ -21,6 +21,9 @@ $background = get_field('background');
                 <div class="entry_content">
                     <?php the_content(); ?>
                 </div>
+                <div class="trio_image_container">
+                    <img src="<?=get_template_directory_uri()?>/assets/img/trio-on-board.png" alt="Trio of crunch rolls on a wooden board.">
+                </div>
             </section>
 
             <?php if(have_rows('products')): ?>
