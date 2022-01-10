@@ -124,7 +124,7 @@
 
     @media(min-width: $breakpointNav){
         order: 1;
-        margin-top: unset;
+        margin-top: 1.5em;
         flex-grow: 1;
     }
 }
@@ -313,7 +313,7 @@
         border-top: unset;
         border-bottom: unset;
         order: 2;
-        padding-top: unset;
+        padding-top: 1.5em;
         padding-bottom: unset;
         justify-content: unset;
         font-size:unset;
