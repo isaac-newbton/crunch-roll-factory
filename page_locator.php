@@ -20,6 +20,12 @@ get_header();
             </div>
         </article>
 
+        <div id="locator">
+            <!-- MetaLocator.com Code START -->
+            <script language="javascript" src="//code.metalocator.com/index.php?option=com_locator&view=directory&layout=_javascript&framed=1&format=raw&tmpl=component&no_html=1&Itemid=15473"></script>
+            <!-- MetaLocator.com Code END -->
+        </div>
+
     </main>
 
 </div>
